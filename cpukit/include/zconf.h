@@ -103,6 +103,8 @@
 #  define zlibCompileFlags      z_zlibCompileFlags
 #  define zlibVersion           z_zlibVersion
 
+#ifndef __rtems__
+
 /* all zlib typedefs in zlib.h and zconf.h */
 #  define Byte                  z_Byte
 #  define Bytef                 z_Bytef
@@ -126,6 +128,8 @@
 /* all zlib structs in zlib.h and zconf.h */
 #  define gz_header_s           z_gz_header_s
 #  define internal_state        z_internal_state
+
+#endif /* __rtems__ */
 
 #endif
 
