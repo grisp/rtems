@@ -154,6 +154,18 @@ static void imx_find_gic(const void *fdt)
   imx_gic_dist_base = (uintptr_t) imx_get_reg_of_node(fdt, node);
 }
 
+static void imx_ccm_enable_eth2_clk(void)
+{
+  const void *fdt = bsp_fdt_get();
+
+  if (imx_is_imx6(fdt)) {
+    volatile uint32_t *ccm_pll_enet_set = (void *)0x020c80e4;
+    const uint32_t ccm_pll_enet_enet2_125m_en = (1 << 20);
+
+    *ccm_pll_enet_set = ccm_pll_enet_enet2_125m_en;
+  }
+}
+
 void bsp_start(void)
 {
   imx_find_gic(bsp_fdt_get());
@@ -162,4 +174,5 @@ void bsp_start(void)
     bsp_section_nocacheheap_begin,
     (uintptr_t) bsp_section_nocacheheap_size
   );
+  imx_ccm_enable_eth2_clk();
 }
