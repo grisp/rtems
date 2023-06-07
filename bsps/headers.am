@@ -108,6 +108,7 @@ include_libchip_HEADERS += ../../bsps/include/libchip/if_fxpvar.h
 include_libchip_HEADERS += ../../bsps/include/libchip/m48t08.h
 include_libchip_HEADERS += ../../bsps/include/libchip/mc146818a.h
 include_libchip_HEADERS += ../../bsps/include/libchip/mc68681.h
+include_libchip_HEADERS += ../../bsps/include/libchip/mcp7940m-rtc.h
 include_libchip_HEADERS += ../../bsps/include/libchip/ns16550.h
 include_libchip_HEADERS += ../../bsps/include/libchip/ns16550_p.h
 include_libchip_HEADERS += ../../bsps/include/libchip/open_eth.h

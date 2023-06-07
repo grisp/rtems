@@ -73,6 +73,9 @@ librtemsbsp_a_SOURCES += ../../../../../../bsps/arm/imx/i2c/imx-i2c.c
 # SPI
 librtemsbsp_a_SOURCES += ../../../../../../bsps/arm/imx/spi/imx-ecspi.c
 
+# RTC
+librtemsbsp_a_SOURCES += ../../../../../../bsps/shared/dev/rtc/rtc-support.c
+
 # Start hooks
 librtemsbsp_a_SOURCES += ../../../../../../bsps/arm/imx/start/bspstarthooks.c
 

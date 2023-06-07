@@ -24,6 +24,7 @@ librtemsbsp_a_SOURCES += ../../../../../../bsps/shared/dev/rtc/m48t08_reg8.c
 librtemsbsp_a_SOURCES += ../../../../../../bsps/shared/dev/rtc/m48t08_reg.c
 librtemsbsp_a_SOURCES += ../../../../../../bsps/shared/dev/rtc/mc146818a.c
 librtemsbsp_a_SOURCES += ../../../../../../bsps/shared/dev/rtc/mc146818a_ioreg.c
+librtemsbsp_a_SOURCES += ../../../../../../bsps/shared/dev/rtc/mcp7940m.c
 librtemsbsp_a_SOURCES += ../../../../../../bsps/shared/dev/rtc/rtcprobe.c
 librtemsbsp_a_SOURCES += ../../../../../../bsps/shared/dev/serial/mc68681_baud.c
 librtemsbsp_a_SOURCES += ../../../../../../bsps/shared/dev/serial/mc68681.c
