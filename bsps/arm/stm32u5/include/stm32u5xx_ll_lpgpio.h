@@ -41,7 +41,7 @@ extern "C" {
 /* Private variables ---------------------------------------------------------*/
 /* Private constants ---------------------------------------------------------*/
 /* Private macros ------------------------------------------------------------*/
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup LPGPIO_LL_Private_Macros LPGPIO Private Macros
   * @{
   */
@@ -52,7 +52,7 @@ extern "C" {
 #endif /*USE_FULL_LL_DRIVER*/
 
 /* Exported types ------------------------------------------------------------*/
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup LPGPIO_LL_ES_INIT LPGPIO Exported Init structures
   * @{
   */
@@ -427,7 +427,7 @@ __STATIC_INLINE void LL_LPGPIO_TogglePin(GPIO_TypeDef *LPGPIOx, uint32_t PinMask
   * @}
   */
 
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup GPIO_LL_EF_Init Initialization and de-initialization functions
   * @{
   */

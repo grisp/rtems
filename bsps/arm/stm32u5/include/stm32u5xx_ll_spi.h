@@ -63,7 +63,7 @@ extern "C" {
   */
 
 /* Exported types ------------------------------------------------------------*/
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup SPI_LL_Exported_Types SPI Exported Types
   * @{
   */
@@ -424,7 +424,7 @@ typedef struct
   * @}
   */
 
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 
 /** @defgroup SPI_LL_EC_CRC_CALCULATION CRC Calculation
   * @{
@@ -2710,7 +2710,7 @@ __STATIC_INLINE uint32_t LL_SPI_GetSelectedTrigger(const SPI_TypeDef *SPIx)
   * @}
   */
 
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup SPI_LL_EF_Init Initialization and de-initialization functions
   * @{
   */

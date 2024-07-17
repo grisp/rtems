@@ -103,7 +103,7 @@ static const uint8_t LL_LPTIM_OFFSET_TAB_ICx[8][4] =
   */
 
 /* Private macros ------------------------------------------------------------*/
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup LPTIM_LL_Private_Macros LPTIM Private Macros
   * @{
   */
@@ -113,7 +113,7 @@ static const uint8_t LL_LPTIM_OFFSET_TAB_ICx[8][4] =
 #endif /*USE_FULL_LL_DRIVER*/
 
 /* Exported types ------------------------------------------------------------*/
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup LPTIM_LL_ES_INIT LPTIM Exported Init structure
   * @{
   */
@@ -551,7 +551,7 @@ typedef struct
 @endcond
   */
 
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup LPTIM_LL_EF_Init Initialisation and deinitialisation functions
   * @{
   */

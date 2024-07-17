@@ -42,7 +42,7 @@ extern "C" {
 /* Private macros ------------------------------------------------------------*/
 
 /* Exported types ------------------------------------------------------------*/
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup UCPD_LL_ES_INIT UCPD Exported Init structure
   * @{
   */
@@ -1849,7 +1849,7 @@ __STATIC_INLINE void LL_UCPD_SetRxOrdExt2(UCPD_TypeDef *UCPDx, uint32_t SOPExt)
   * @}
   */
 
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup UCPD_LL_EF_Init Initialization and de-initialization functions
   * @{
   */

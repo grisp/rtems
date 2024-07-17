@@ -43,7 +43,7 @@ extern "C" {
 #define LL_EXTI_REGISTER_PINPOS_SHFT        16U   /*!< Define used to shift pin position in EXTICR register */
 
 /* Private Macros ------------------------------------------------------------*/
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup EXTI_LL_Private_Macros EXTI Private Macros
   * @{
   */
@@ -52,7 +52,7 @@ extern "C" {
   */
 #endif /*USE_FULL_LL_DRIVER*/
 /* Exported types ------------------------------------------------------------*/
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup EXTI_LL_ES_INIT EXTI Exported Init structure
   * @{
   */
@@ -123,7 +123,7 @@ typedef struct
 #define LL_EXTI_LINE_ALL_0_31         0x00FFFFFFU             /*!< ALL Extended line */
 #endif /* defined(EXTI_IMR1_IM24) && defined(EXTI_IMR1_IM25) */
 
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 #define LL_EXTI_LINE_NONE              0x00000000U             /*!< None Extended line */
 #endif /*USE_FULL_LL_DRIVER*/
 
@@ -176,7 +176,7 @@ typedef struct
 /**
   * @}
   */
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 
 /** @defgroup EXTI_LL_EC_MODE Mode
   * @{
@@ -1471,7 +1471,7 @@ __STATIC_INLINE uint32_t LL_EXTI_GetLockAttributes(void)
   * @}
   */
 
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup EXTI_LL_EF_Init Initialization and de-initialization functions
   * @{
   */

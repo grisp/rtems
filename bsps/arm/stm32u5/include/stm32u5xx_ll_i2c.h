@@ -60,7 +60,7 @@ extern "C" {
   */
 
 /* Exported types ------------------------------------------------------------*/
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup I2C_LL_ES_INIT I2C Exported Init structure
   * @{
   */
@@ -2561,7 +2561,7 @@ __STATIC_INLINE uint32_t LL_I2C_GetSelectedTrigger(const I2C_TypeDef *I2Cx)
   * @}
   */
 
-#if defined(USE_FULL_LL_DRIVER)
+#if defined(USE_FULL_LL_DRIVER) || defined(__rtems__)
 /** @defgroup I2C_LL_EF_Init Initialization and de-initialization functions
   * @{
   */
