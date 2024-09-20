@@ -47,10 +47,10 @@ const RCC_OscInitTypeDef stm32u5_config_oscillator = {
   .PLL.PLLSource = RCC_PLLSOURCE_HSE,
   .PLL.PLLMBOOST = RCC_PLLMBOOST_DIV1,
   .PLL.PLLM = 1,
-  .PLL.PLLN = 10,
-  .PLL.PLLP = 8,
+  .PLL.PLLN = 20,
+  .PLL.PLLP = 5,
   .PLL.PLLQ = 2,
-  .PLL.PLLR = 1,
+  .PLL.PLLR = 2,
   .PLL.PLLRGE = RCC_PLLVCIRANGE_1,
   .PLL.PLLFRACN = 0
 };
