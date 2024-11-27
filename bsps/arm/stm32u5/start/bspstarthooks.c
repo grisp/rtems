@@ -131,13 +131,18 @@ void BSP_START_TEXT_SECTION bsp_start_hook_0(void)
   HAL_GetTick_ptr = Startup_HAL_GetTick;
   startup_delay_call_counter = 0;
 
-  SystemInit();
-  SystemCoreClockUpdate();
-  stm32u5_rcc_power_clock_enable();
-  stm32u5_init_oscillator();
-  stm32u5_init_clocks();
-  stm32u5_init_power();
-  stm32u5_init_peripheral_clocks();
+  /* If we are running from OctoSPI, we must not touch the clocks and pins.
+   * Otherwise the OSPI RAM won't work any more. */
+  if (stm32u5_init_octospi < stm32u5_memory_octospi_1_begin ||
+      stm32u5_init_octospi > stm32u5_memory_octospi_1_end) {
+    SystemInit();
+    SystemCoreClockUpdate();
+    stm32u5_rcc_power_clock_enable();
+    stm32u5_init_oscillator();
+    stm32u5_init_clocks();
+    stm32u5_init_power();
+    stm32u5_init_peripheral_clocks();
+  }
   HAL_Init();
 }
 
