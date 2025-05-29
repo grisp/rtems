@@ -284,30 +284,5 @@ rtems_dosfs_convert_control *rtems_dosfs_create_utf8_converter(
   const char *codepage
 )
 {
-  msdos_utf8_convert_control *self = malloc( sizeof( *self ) );
-
-  if ( self != NULL ) {
-    self->desc_codepage_to_utf8 = iconv_open( "UTF-8", codepage );
-    self->desc_utf8_to_codepage = iconv_open( codepage, "UTF-8" );
-    self->desc_utf16_to_utf8    = iconv_open( "UTF-8", "UTF-16LE" );
-    self->desc_utf8_to_utf16    = iconv_open( "UTF-16LE", "UTF-8" );
-
-    if (
-      self->desc_utf16_to_utf8 != INVALID_ICONV_DESC
-        && self->desc_utf8_to_codepage != INVALID_ICONV_DESC
-        && self->desc_codepage_to_utf8 != INVALID_ICONV_DESC
-        && self->desc_utf8_to_utf16 != INVALID_ICONV_DESC
-    ) {
-      rtems_dosfs_convert_control *super = &self->super;
-
-      super->handler = &msdos_utf8_convert_handler;
-      super->buffer.data = &self->buffer;
-      super->buffer.size = sizeof( self->buffer );
-    } else {
-      msdos_utf8_destroy( &self->super );
-      self = NULL;
-    }
-  }
-
-  return &self->super;
+    return(rtems_dosfs_create_default_converter());
 }
