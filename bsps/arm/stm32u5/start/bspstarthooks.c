@@ -135,13 +135,17 @@ void BSP_START_TEXT_SECTION bsp_start_hook_0(void)
    * Otherwise the OSPI RAM won't work any more. */
   if (stm32u5_init_octospi < stm32u5_memory_octospi_1_begin ||
       stm32u5_init_octospi > stm32u5_memory_octospi_1_end) {
-    SystemInit();
-    SystemCoreClockUpdate();
-    stm32u5_rcc_power_clock_enable();
-    stm32u5_init_oscillator();
-    stm32u5_init_clocks();
-    stm32u5_init_power();
-    stm32u5_init_peripheral_clocks();
+    // comment when building for app => NOT for bootlader
+    // We only want to do this for the bootlader
+    #ifdef GRISP_NANO_BOOTLOADER
+        SystemInit();
+        SystemCoreClockUpdate();
+        stm32u5_rcc_power_clock_enable();
+        stm32u5_init_oscillator();
+        stm32u5_init_clocks();
+        stm32u5_init_power();
+        stm32u5_init_peripheral_clocks();
+    #endif
   }
   HAL_Init();
 }
@@ -151,7 +155,10 @@ void BSP_START_TEXT_SECTION bsp_start_hook_1(void)
   /* Init OctoSPI only if we are not running from it */
   if (stm32u5_init_octospi < stm32u5_memory_octospi_1_begin ||
       stm32u5_init_octospi > stm32u5_memory_octospi_1_end) {
-    stm32u5_init_octospi();
+    // comment when building for app => NOT for bootlader
+    #ifdef GRISP_NANO_BOOTLOADER
+      stm32u5_init_octospi();
+    #endif
   }
   bsp_start_copy_sections();
   bsp_start_clear_bss();
