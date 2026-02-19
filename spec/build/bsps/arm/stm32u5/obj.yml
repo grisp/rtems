@@ -155,6 +155,7 @@ install:
   - bsps/arm/stm32u5/start/linkcmds.flash+ospi
   - bsps/arm/stm32u5/start/linkcmds.sram
   - bsps/arm/stm32u5/start/linkcmds.ospi
+  - bsps/arm/stm32u5/start/linkcmds.nano
 links: []
 source:
 - bsps/arm/shared/clock/clock-armv7m.c
