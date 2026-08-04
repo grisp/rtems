@@ -22,6 +22,8 @@
 
 #include <libfdt.h>
 
+#include "imx6ull-clock.h"
+
 #define MAGIC_IRQ_OFFSET 32
 
 void *imx_get_reg_of_node(const void *fdt, int node)
@@ -156,6 +158,7 @@ static void imx_find_gic(const void *fdt)
 
 void bsp_start(void)
 {
+  imx6ull_setup_cpu_frequency(bsp_fdt_get());
   imx_find_gic(bsp_fdt_get());
   bsp_interrupt_initialize();
   rtems_cache_coherent_add_area(
